@@ -27,3 +27,11 @@
     - name: accessing variable from another file
       ansible.builtin.debug:
         msg: url is - {{URL}}
+
+- name: declaring variable at host file
+  hosts: all
+  connection: local
+  tasks:
+    - name: accessing variable from inventory file
+      ansible.builtin.debug:
+        msg: url is - {{URL}}
