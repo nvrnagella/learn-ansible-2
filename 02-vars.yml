@@ -35,3 +35,11 @@
     - name: accessing variable from inventory file
       ansible.builtin.debug:
         msg: url is - {{URL}}
+
+- name: ansible facts
+  hosts: all
+  connection: local
+  tasks:
+    - name: accessing ansible predefined variables
+      ansible.builtin.debug:
+        msg: ansible host name == {{ansible_fqdn}}
