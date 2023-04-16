@@ -12,7 +12,7 @@
   hosts: all
   connection: local
   tasks:
-    - name: declaring variable at task level
+    - name: accessing task level variable
       ansible.builtin.debug:
         msg: url is - {{URL}}
       vars:
