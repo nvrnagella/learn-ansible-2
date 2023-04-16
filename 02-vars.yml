@@ -43,3 +43,14 @@
     - name: accessing ansible predefined variables
       ansible.builtin.debug:
         msg: ansible host name == {{ansible_fqdn}}
+
+- name: register a variable
+  hosts: all
+  connection: local
+  tasks:
+    - name: register task into register variable
+      ansible.builtin.shell: uptime
+      register: out
+    - name: print out variable
+      ansible.builtin.debug:
+        msg: out is - {{out}}
