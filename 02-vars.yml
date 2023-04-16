@@ -1,4 +1,4 @@
-- name: variables
+- name: declaring variable at play level
   hosts: all
   connection: local
   vars:
@@ -7,6 +7,11 @@
     - name: access play level variable
       ansible.builtin.debug:
         msg: url is - {{URL}}
+
+- name: declaring variable at task level
+  hosts: all
+  connection: local
+  tasks:
     - name: declaring variable at task level
       ansible.builtin.debug:
         msg: url is - {{URL}}
